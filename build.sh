@@ -81,7 +81,7 @@ TAB_FILES=$(find . -type f  -name '*.rb' | egrep -v '.git')
 for targetFile in $TAB_FILES ; do 
   printMsg "   --- Checking $targetFile for leading tabs ---"
   grep -P '^\t' $targetFile && die "found leading tab in $targetFile"
-done2
+done
 
 printMsg "--- Linting cookbook with foodcritic ---"
 foodcritic -f any . || die "foodcritic linting failed"
